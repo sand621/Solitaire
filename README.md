@@ -4,4 +4,5 @@
 *play game
 
 no license
-<http://example.com/>
+
+github page : <http://example.com/>
