@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char c[7][7];
+int c[7][7];
 void title(void);//게임 시작화면
 void set_sol(void);//솔리테어 판 
 void tuto(void);//튜토리얼모드
@@ -25,8 +25,8 @@ void title(void) {
 void check_key(void) {
 	int x, y, a, b;
 	printf("Select Number (x,y):");
-	scanf("%d %d", &x, &y);
-	printf("Move Number(1.up 2.right 3.down 4.left):");
+	scanf("%d %d", &y, &x);
+	printf("Move Number(1.down 2.right 3.up 4.left):");
 	scanf("%d", &a);
 	if (a == 1) {
 		if( (c[x][y - 1] == 0 )||(c[x+1][y-1]!=0))
@@ -69,38 +69,38 @@ void check_key(void) {
 void set_sol(void) {
 	
 	printf("         "); printf("+---+---+---+\n");
-	printf("         "); printf("| %c | %c | %c |\n",c[0][2],c[0][3],c[0][4]);
+	printf("         "); printf("| %d | %d | %d |\n",c[0][2],c[0][3],c[0][4]);
 	printf("         "); printf("+---+---+---+\n");
 	printf("         "); printf("+---+---+---+\n");
-	printf("         "); printf("| %c | %c | %c |\n",c[1][2],c[1][3],c[1][4]);
+	printf("         "); printf("| %d | %d | %d |\n",c[1][2],c[1][3],c[1][4]);
 	printf("         "); printf("+---+---+---+\n");
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
-	printf("| %c | %c |",c[2][0],c[2][1]); printf("| %c | %c | %c |",c[2][2],c[2][3],c[2][4]); printf("| %c | %c |\n",c[2][5],c[2][6]);
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
-	printf("| %c | %c |",c[3][0],c[3][1]); printf("| %c | %c | %c |",c[3][2],c[3][3],c[3][4]); printf("| %c | %c |\n",c[3][5],c[3][6]);
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
-	printf("| %c | %c |",c[4][0],c[4][1]); printf("| %c | %c | %c |",c[4][2],c[4][3],c[4][4]); printf("| %c | %c |\n",c[4][5],c[4][6]);
-	printf("+---+---+"); printf("+---+---+---+"); printf("+---+---+\n");
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
+	printf("| %d | %d |",c[2][0],c[2][1]); printf("| %d | %d | %d |",c[2][2],c[2][3],c[2][4]); printf("| %d | %d |\n",c[2][5],c[2][6]);
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
+	printf("| %d | %d |",c[3][0],c[3][1]); printf("| %d | %d | %d |",c[3][2],c[3][3],c[3][4]); printf("| %d | %d |\n",c[3][5],c[3][6]);
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
+	printf("| %d | %d |",c[4][0],c[4][1]); printf("| %d | %d | %d |",c[4][2],c[4][3],c[4][4]); printf("| %d | %d |\n",c[4][5],c[4][6]);
+	printf("+---+---+");                 printf("+---+---+---+"); printf("+---+---+\n");
 	printf("         "); printf("+---+---+---+\n");
-	printf("         "); printf("| %c | %c | %c |\n",c[5][2],c[5][3],c[5][4]);
+	printf("         "); printf("| %d | %d | %d |\n",c[5][2],c[5][3],c[5][4]);
 	printf("         "); printf("+---+---+---+\n");
 	printf("         "); printf("+---+---+---+\n");
-	printf("         "); printf("| %c | %c | %c |\n",c[6][2],c[6][3],c[6][4]);
+	printf("         "); printf("| %d | %d | %d |\n",c[6][2],c[6][3],c[6][4]);
 	printf("         "); printf("+---+---+---+\n");
 
 	return;
 }
 
 void tuto(void) {
-	c[3][2] = 3, c[3][3] = 4 ;
+	c[3][2] = 3; c[3][3] = 4 ;
 	set_sol();
 	while (c[3][3]!=0) {
 		int x,y,a,b;
 		printf("Select Number (x,y):");
-		scanf("%d %d",&x,&y);
-		printf("Move Number(1.up 2.right 3.down 4.left):");
+		scanf("%d %d",&y,&x);
+		printf("Move Number(1.down 2.right 3.up 4.left):");
 		scanf("%d", &a);
 		if (a == 1) {
 			if ((c[x][y - 1] == 0) )
@@ -146,16 +146,17 @@ void tuto(void) {
 }
 
 void start_game(void) {
-	c[0][2] = 3, c[0][3] = 4, c[0][4] = 5; c[1][2] = 13, c[1][3] = 14, c[1][4] = 15;
-	c[2][0] = 31, c[2][1] = 32, c[2][2] = 33, c[2][3] = 34, c[2][4] = 35, c[2][5] = 36, c[2][6] = 37;
-	c[3][0] = 41, c[3][1] = 42, c[3][2] = 43, c[3][3] = 0, c[3][4] = 45, c[3][5] = 46, c[3][6] = 47;
-	c[4][0] = 51, c[4][1] = 52, c[4][2] = 53, c[4][3] = 54, c[4][4] = 55, c[4][5] = 56, c[4][6] = 57;
-	c[5][2] = 63, c[5][3] = 64, c[5][4] = 65; c[6][2] = 73, c[6][3] = 74, c[6][4] = 75;
+	c[0][2] = 3, c[0][3] = 4, c[0][4] = 5; c[1][2] = 3, c[1][3] = 4, c[1][4] = 5;
+	c[2][0] = 1, c[2][1] = 2, c[2][2] = 3, c[2][3] = 4, c[2][4] = 5, c[2][5] = 6, c[2][6] = 7;
+	c[3][0] = 1, c[3][1] = 2, c[3][2] = 3, c[3][3] = 0, c[3][4] = 5, c[3][5] = 6, c[3][6] = 7;
+	c[4][0] = 1, c[4][1] = 2, c[4][2] = 3, c[4][3] = 4, c[4][4] = 5, c[4][5] = 6, c[4][6] = 7;
+	c[5][2] = 3, c[5][3] = 4, c[5][4] = 5; c[6][2] = 3, c[6][3] = 4, c[6][4] = 5;
 	set_sol();
-	while (1) {
+	int i=0;
+	while (i!=3) {
 		check_key();
 		set_sol();
-
+		i=i+1;
 	}
 }
 
