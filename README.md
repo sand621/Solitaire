@@ -7,4 +7,4 @@
 
 no license
 
-github page : <http://example.com/>
+github page : <https://sand621.github.io/Solitaire/>
