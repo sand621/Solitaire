@@ -4,3 +4,4 @@
 *play game
 
 no license
+<http://example.com/>
