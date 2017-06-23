@@ -15,3 +15,8 @@ you choose one point of number ex) (3,3) = 3 3  (4,5) = 4 5
 
 and you select direction up, down, left ,right , then the number jumps other number and remove number
 
+Game start
+==========
+If yo have only one number, then you win
+
+
