@@ -8,4 +8,4 @@
 
 no license
 
-github page : <https://sand621.github.io/Solitaire/>
+github page : [링크](https://sand621.github.io/Solitaire/)
